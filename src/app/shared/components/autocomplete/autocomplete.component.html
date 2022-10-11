@@ -1,0 +1,4 @@
+<input type="text" list="browse" name="browse" placeholder="BTCUSDT" (keyup)="browseSymbol($event)" (change)="selectSymbol($event)">
+<datalist id="browse">
+    <option [value]="s" *ngFor="let s of browsedSymbols">{{s}}</option>
+</datalist>

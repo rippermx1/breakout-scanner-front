@@ -1,0 +1,34 @@
+<h1>Volume Calculator</h1>
+
+<p>* By default this calculator asumes 1% risk of the total USD Volume you manage *</p>
+<form>
+    <p>Enter the usd volume: <input type="number" name="volume" formControlName="volume"/></p>
+    <p>Enter the max volatility risk: <input type="number" name="volatility_ptc"  formControlName="volatility_ptc"/></p>
+    <p>Enter the Taker Fee: <input type="number" name="taker_fee"  formControlName="taker_fee"/></p>
+    <p>Enter the Maker Fee: <input type="number" name="maker_fee"  formControlName="maker_fee"/></p>
+    <a (click)="getVolumeByRisk()">Calculate</a>
+</form>
+<p>Transactions <input type="range" min="1" max="10" name="max_trades" (change)="updateTable()"/></p>
+
+<div class="row">
+    <div class="col-4">
+        <div class="row text-center">        
+            <p class="col-2">#</p>
+            <p class="col-2">volume</p>
+            <p class="col-2">risk</p>
+            <p class="col-3">taker fee</p>
+            <p class="col-3">maker fee</p>
+        </div>
+    </div>    
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="row text-center">        
+            <p class="col-2">1</p>
+            <p class="col-2">2000</p>
+            <p class="col-2">20</p>
+            <p class="col-3">0.14</p>
+            <p class="col-3">0.04</p>
+        </div>
+    </div>    
+</div>

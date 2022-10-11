@@ -1,0 +1,27 @@
+<div class="row m-0 p-0">
+    <div class="col-4 m-0 p-0">
+        <app-chart [symbol]="'BTCUSDT'" [interval]="'1d'" [graphId]="'1d-graph'" [indicators]="true"></app-chart>
+    </div>
+    <div class="col-4 m-0 p-0">
+        <app-chart [symbol]="'BTCUSDT'" [interval]="'5m'" [graphId]="'5m-graph'"></app-chart>
+    </div>
+    <div class="col-4 m-0 p-0">
+        <div class="row">
+            <div class="col-4 text-center">
+                <p>Pivot Alert</p>
+                <div *ngIf="pivotAlerts.length > 0">      
+                    <app-pivot-alert *ngFor="let alert of pivotAlerts" [alert]="alert" (alertSelectedEvent)="alertSelectedEvent($event)"></app-pivot-alert>
+                </div>
+            </div>
+            <div class="col-4 text-center">
+                <p>Volume Alert</p>
+                <div *ngIf="volumeAlerts.length > 0">      
+                    <app-volume-alert *ngFor="let alert of volumeAlerts" [alert]="alert"></app-volume-alert>
+                </div>
+            </div>
+            <div class="col-4 text-center">
+                <p>STOCKh Alert</p>
+            </div>
+        </div>
+    </div>
+</div>

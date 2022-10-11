@@ -1,0 +1,4 @@
+<ul class="list-group">
+    <li class="list-group-item" aria-current="true">{{type | titlecase}} Levels</li>
+    <li [class]="classItem" *ngFor="let l of levels">{{l.value}}</li>
+</ul>

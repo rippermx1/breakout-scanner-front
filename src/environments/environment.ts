@@ -3,14 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://127.0.0.1:8001',
+  socketUrl: 'http://127.0.0.1:8001/ws',
+  pivotLevelScannerSocketUrl: 'ws://localhost:8002',
+  volumeScannerSocketUrl: 'ws://localhost:8003',
+  mainSocketServer: 'ws://localhost:8001/ws'
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

@@ -1,0 +1,16 @@
+<div class="row m-0 p-0">
+    <div class="col-4">
+        <app-chart [symbol]="symbol"></app-chart>
+    </div>
+    <div class="col-4">
+        <app-volume-at-time [symbol]="symbol"></app-volume-at-time>
+    </div>
+    <div class="col-4">
+        <div class="col-6">
+            <p>Sell Volume {{data.sell_volume}}</p>    
+        </div>
+        <div class="col-6">
+            <p>Buy Volume {{data.buy_volume}}</p>    
+        </div>                
+    </div> 
+</div>

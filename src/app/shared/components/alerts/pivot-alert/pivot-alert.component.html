@@ -1,0 +1,5 @@
+<alert type="success" [dismissOnTimeout]="15000" (click)="alertSelected(alert)">
+    <p class="text-center mb-0">
+        <strong class="pointer">{{alert.symbol}}</strong> is <strong> {{alert.distance_ptc}}% </strong> <strong>{{alert.price > alert.level ? 'ABOVE' : 'BELOW'}} {{alert.level}}</strong>
+    </p>
+</alert>

@@ -1,0 +1,44 @@
+<div class="row m-0 p-0">
+  <div class="col-12">
+    <select (change)="selectSymbol($event)">
+      <option *ngFor="let symbol of symbols" [value]="symbol">{{symbol}}</option>
+    </select>
+    <select (change)="selectInterval($event)">
+      <option *ngFor="let i of intervals" [value]="i">{{i}}</option>
+    </select>
+    <app-autocomplete *ngIf="symbols.length > 0" (symbolSelected)="symbolSelectedEvent($event)"></app-autocomplete>
+    <button class="btn btn-primary">Sync to Real Time Data</button>
+  </div>
+</div>
+
+<div class="row m-0 p-0">
+  <div class="col-3">
+    <p class="text-center text-white">1h Scanner</p>
+    <div *ngIf="swingAlerts.length > 0; else searching">      
+      <app-pivot-alert *ngFor="let alert of swingAlerts" [alert]="alert" (alertSelectedEvent)="alertSelectedEvent($event)"></app-pivot-alert>
+    </div>
+  </div>
+  <div class="col-6">
+    <div id="graph"></div>
+  </div>
+  <div class="col-3">
+    <p class="text-center text-white">5m Scanner</p>
+    <div *ngIf="intradayAlerts.length > 0; else searching">      
+      <app-pivot-alert *ngFor="let alert of intradayAlerts" [alert]="alert" (alertSelectedEvent)="alertSelectedEvent($event)"></app-pivot-alert>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0 p-0">
+  <app-price-level-table class="col-2" [type]="resistanceType" [levels]="resistances"></app-price-level-table>
+  <app-price-level-table class="col-2" [type]="supportType" [levels]="supports"></app-price-level-table>  
+</div>
+
+<ng-template #searching>
+  <div class="row col-12">
+    <p class="text-center text-white">Searching...</p>
+  </div>
+</ng-template>
+
+
+
